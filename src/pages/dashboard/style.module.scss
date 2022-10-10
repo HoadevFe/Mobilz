@@ -1,0 +1,63 @@
+@import 'sdk/styles/global.scss';
+
+$primary_blue: #5168ff;
+$primary_black: #1c1c21;
+$text_color: #9fa2b4;
+$number_color: #ccceda;
+.GridContainer {
+  color: $default_yellow;
+  & .Link {
+    text-decoration: none;
+    & .content {
+      padding-left: 16px;
+      padding-right: 8px;
+
+      & .Card {
+        text-align: center;
+        width: 272px;
+        height: 134px;
+        background-color: $primary_black;
+
+        &:hover {
+          border: 2px solid $primary_blue;
+          cursor: pointer;
+        }
+        & .CardContent {
+          &:hover .Typography {
+            color: $primary_blue;
+          }
+          & .text {
+            font-size: 19px;
+            font-weight: 700;
+            color: $text_color;
+          }
+          & .number {
+            font-size: 40px;
+            font-weight: 700;
+            margin-top: 12px;
+            color: $number_color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contentSkeleton {
+  display: flex;
+  & .boxSkeleton {
+    width: 272px;
+    height: 134px;
+    background-color: $primary_black;
+    border-radius: 6px;
+    box-sizing: border-box;
+    & .skeleton {
+      background: #3d3d3d;
+      margin-left: 1.75rem;
+      border-radius: 8px;
+    }
+  }
+  & .box {
+    margin-left: 1.5rem;
+  }
+}

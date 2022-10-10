@@ -1,0 +1,19 @@
+@import '../../styles/global.scss';
+
+.TableRowLoading {
+  display: none;
+  &.Active {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    & .Item {
+      position: absolute;
+      color: $primary;
+      top: 40%;
+      left: 50%;
+    }
+  }
+}

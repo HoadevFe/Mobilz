@@ -1,0 +1,167 @@
+@import '../../sdk/styles/global.scss';
+
+$font: 'Mulish';
+$textField_Color: #9fa2b4;
+.SubTitle1 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: $font;
+}
+
+.appLoginWrapper {
+  position: relative;
+  max-width: 680px;
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  img.Logo {
+    height: 2.7rem;
+  }
+}
+.AuthMainContent {
+  &:global(.app-login-main-content) {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: unset;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.LoginMainContentFormWrapper {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: unset;
+  width: 380px;
+  .AuthMainContent {
+    padding: 40px 32px;
+    // width: 40rem;
+    background: #1c1c21;
+    box-shadow: 0px 0px 8px rgb(37 40 43 / 12%);
+    border-radius: 8px;
+    flex-direction: column;
+    border: 1px solid #1e1f30;
+    align-items: center;
+    position: relative;
+    overflow: unset;
+    display: flex;
+    flex-wrap: wrap;
+    .Header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: $font;
+      .textTitleLogo {
+        color: #a4a6b3;
+        font-weight: 700;
+        font-size: 19px;
+        letter-spacing: 0.3px;
+        line-height: 24px;
+        font-family: $font;
+        margin-top: 12px;
+        margin-bottom: 32px;
+      }
+      .textDescription {
+        margin-bottom: 24px;
+        @extend .SubTitle1;
+      }
+      .textLoginHeader {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        font-family: $font;
+        margin-bottom: 12px;
+        text-align: center;
+      }
+    }
+  }
+}
+.textField {
+  .textLabelForm {
+    margin-top: 24px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: $textField_Color;
+    font-family: $font;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  input {
+    background: #4b506d;
+    outline: none;
+    border: 1px solid #4b506d;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px 14px;
+    color: $textField_Color;
+    font-size: 14px;
+    &::placeholder {
+      color: $textField_Color;
+      opacity: 1;
+    }
+  }
+  .inputText {
+    width: 100%;
+  }
+}
+.buttonSubmit {
+  background: #5168ff;
+  width: 100%;
+  border-radius: 8px;
+  height: 48px;
+  margin-top: 24px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: $font;
+  text-transform: capitalize;
+}
+.inputPasswordWrapper {
+  position: relative;
+  :global(.MuiOutlinedInput-input) {
+    padding-right: 50px;
+  }
+  .endButton {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    right: 5px;
+    svg {
+      transform: unset;
+      width: 20px;
+      path {
+        fill: $textField_Color;
+      }
+    }
+  }
+}
+.HelpText {
+  color: rgb(239, 81, 81);
+  font-weight: 400;
+  font-size: 12px;
+}
+.inputError {
+  fieldset {
+    border-color: rgb(239, 81, 81);
+  }
+}
+.version {
+  color: $textField_Color;
+}
+@media screen and (max-width: 480px) {
+  .appLoginWrapper {
+    max-width: 100%;
+  }
+  .LoginMainContentFormWrapper {
+    width: 100%;
+  }
+}

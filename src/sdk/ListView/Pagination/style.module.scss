@@ -1,0 +1,45 @@
+@import "../../styles/global.scss";
+$color_pagination: #9fa2b4;
+.Pagination {
+  color: $color_pagination;
+  overflow: unset;
+  div {
+    margin: 0 1rem;
+    & svg {
+      color: $color_pagination;
+    }
+  }
+  & .Select {
+    box-sizing: border-box;
+    margin: 0px !important;
+    padding-right: 2rem !important;
+    padding-left: 1rem !important;
+    font-style: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+  }
+  .displayedRows {
+    padding: 0.4rem 0.5rem 0.4rem 0;
+  }
+  .Pagination {
+    &.PaginationRoot {
+      padding: 0 1rem 0 1rem;
+      display: block;
+    }
+    & .ul {
+      flex-wrap: nowrap;
+      li button {
+        opacity: 1;
+        cursor: pointer;
+        .PageActive {
+          background-color: $primary !important;
+        }
+      }
+    }
+  }
+
+  & .Disabled {
+    cursor: not-allowed !important;
+    pointer-events: all !important;
+  }
+}

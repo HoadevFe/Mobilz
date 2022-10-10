@@ -1,0 +1,92 @@
+@import "sdk/styles/global.scss";
+$black_dark: #1c1c21;
+$primary_default: #2563eb;
+@mixin setFieldset($color) {
+  & fieldset {
+    border: 1px solid $color !important;
+  }
+}
+@mixin flex($alignItems: center, $justifyContent: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+.InputBasePaper {
+  background-color: $black_dark;
+  color: #c2cfe0;
+}
+
+.BaseDropdown {
+  height: 36px;
+  color: #c2cfe0;
+  min-width: 100px;
+  fieldset {
+    border: 1px solid #c2cfe0 !important;
+    border-radius: 3px !important;
+  }
+  &:focus-within {
+    @include setFieldset($primary_dark);
+  }
+}
+
+.Button {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  text-transform: inherit;
+  color: $black_20;
+  border: 1px solid $black_20;
+}
+.DropdownRight {
+  @include flex(center, end);
+  padding: 1rem;
+  position: relative;
+}
+.PopoverSelect {
+  background-color: $black_dark;
+  color: $black_20;
+  padding: 10px;
+  margin-top: 30px;
+}
+.MenuItem {
+  padding: 8px 10px;
+
+  & .IconAccessTime {
+    width: 20px;
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+}
+.MenuItemActive {
+  background-color: $black_100;
+
+  &:hover {
+    background-color: $black_100;
+  }
+}
+.TimeRange {
+  background: $black_dark;
+  grid-row: 7 / -1;
+  z-index: 1;
+  padding: 8px;
+}
+.btnSubmit {
+  height: 34px;
+  background: none;
+  border: 1px solid $black_20;
+  & svg {
+    color: $black_20;
+  }
+}
+.SwitchRight {
+  display: flex;
+  align-items: center;
+  .switch {
+    margin-right: 8px;
+    margin-left: 4px;
+    background-color: #333232;
+    border-radius: 20px;
+  }
+}

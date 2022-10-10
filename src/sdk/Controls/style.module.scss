@@ -1,0 +1,44 @@
+@import '../styles/global.scss';
+
+@mixin hover($hover-color) {
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+@mixin svgColor($fill-color) {
+  & svg {
+    fill: $fill-color;
+  }
+}
+.BaseRoot {
+  color: $black_40 !important;
+  @include hover($background_blue);
+}
+.RadioButton {
+  &.RadioChecked {
+    @include svgColor($primary);
+  }
+  &.RadioDisabled {
+    @include svgColor($black_40);
+  }
+}
+.Checkbox {
+  &.CheckboxChecked {
+    @include svgColor($primary);
+  }
+  &.CheckboxDisabled {
+    & svg {
+      fill: $black_20 !important;
+    }
+  }
+  &.Indeterminate {
+    @include svgColor($primary);
+  }
+}
+.label {
+  font-weight: 300 !important;
+  color: $black_100;
+  &.labelDisabled {
+    color: $black_20 !important;
+  }
+}

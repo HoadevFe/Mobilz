@@ -1,0 +1,59 @@
+@import '../styles/global.scss';
+
+@mixin flex($justifyContent) {
+  display: flex;
+  align-items: center;
+  justify-content: $justifyContent;
+}
+
+@mixin text-style($textWeight, $textColor: $black_80, $textSize: 14px) {
+  color: $textColor;
+  font-size: $textSize;
+  font-weight: $textWeight;
+}
+
+.DiaLogTitleRoot {
+  @include flex(space-between);
+  background-color: $white;
+  height: 60px;
+  border-bottom: 1px solid $black_10;
+
+  & .DialogTitleContent {
+    @include flex(flex-start);
+    @include text-style($Medium, $black_100, 18px);
+    margin: 0;
+    gap: 10px;
+  }
+
+  & .DialogTitleIconClose {
+    color: $black_100;
+  }
+}
+
+.DialogRoot {
+  & .PaperRoot {
+    border-radius: 4px;
+  }
+
+  & .DialogContentRoot {
+    padding: 16px 24px 24px 24px;
+
+    &.DialogContentTextRoot {
+      @include text-style($Regular);
+      letter-spacing: 0.1px;
+    }
+
+    & .DialogContentCheckboxText {
+      @include text-style($Medium);
+      margin: 0;
+    }
+  }
+
+  & .DialogActionsRoot {
+    padding: 0px 24px 24px 0px;
+    gap: 9px;
+    & button {
+      width: 120px;
+    }
+  }
+}

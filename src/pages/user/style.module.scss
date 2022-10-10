@@ -1,0 +1,137 @@
+@import 'sdk/styles/global.scss';
+
+$primary_background: #1c1c24;
+$primary_color: #ccceda;
+$color_border: #60626e;
+$background_select: #4b506d;
+$error_color: rgb(239, 81, 81);
+$icon_color: #9fa2b4;
+
+.button {
+  background: $black;
+  color: #ccceda;
+  cursor: pointer;
+  :hover {
+    color: $primary_dark;
+  }
+  & .iconButton {
+    font-size: 1.125rem;
+  }
+}
+.btnAddUser {
+  text-transform: capitalize;
+  font-family: 'Mulish';
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+.DialogRoot {
+  width: 100%;
+}
+
+.DialogTitleEdit {
+  margin: 0;
+  padding: 1rem;
+  background: $primary_background;
+  color: $primary_color;
+  & .IconButton {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    color: $primary_color;
+  }
+}
+
+.DialogContentEdit {
+  background: $primary_background;
+  border-bottom-color: $color_border;
+  border-top-color: $color_border;
+  max-height: calc(100vh - 250px);
+}
+
+.DialogActionsEdit {
+  background: $primary_background;
+  padding: 1rem;
+}
+
+.buttonEdit {
+  background: $black;
+  color: $primary_color;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  min-width: 1.875rem;
+  :hover {
+    color: $primary_dark;
+    border: none;
+  }
+  & .iconButton {
+    font-size: 1.125rem;
+  }
+  svg {
+    font-size: 1.25rem;
+  }
+}
+
+.content {
+  margin-top: 1.5rem;
+  & .title {
+    font-size: 16px;
+    margin-bottom: 0;
+    color: $primary_color;
+  }
+  & .textField {
+    & input {
+      color: $primary_color;
+      font-size: 16px;
+    }
+    & .inputText {
+      background: $background_select;
+      border-radius: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }
+    & .Select {
+      width: 100%;
+      color: $primary_color;
+      background: $background_select;
+    }
+  }
+}
+.menuItemSelect {
+  background: $background_select;
+  color: $primary_color;
+}
+
+.divider {
+  background-color: $color_border;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.btnSubmit {
+  background: $primary_dark;
+}
+.inputPasswordWrapper {
+  position: relative;
+  :global(.MuiOutlinedInput-input) {
+    padding-right: 50px;
+  }
+  .endButton {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    right: 5px;
+    svg {
+      transform: unset;
+      width: 20px;
+      path {
+        fill: $icon_color;
+      }
+    }
+  }
+}
+.HelpText {
+  color: $error_color;
+  font-weight: 400;
+  font-size: 12px;
+}

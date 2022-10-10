@@ -1,0 +1,72 @@
+@import '../styles/global.scss';
+
+.BasicTabs {
+  color: $black_60;
+  .BasicContainer {
+    border-bottom: 1px solid $black_10;
+    width: fit-content;
+    & > button {
+      line-height: 16px;
+      font-size: 12px;
+    }
+    & > button:hover {
+      color: $primary;
+    }
+    & > button[tabindex='0'] {
+      color: $primary;
+    }
+    & > button:disabled {
+      color: $black_40;
+    }
+  }
+  .BasicIndicator {
+    border-radius: 6px 6px 0 0;
+    background-color: $primary;
+  }
+}
+.PaneTabs {
+  color: $black_80;
+  .PaneContainer {
+    position: relative;
+    width: fit-content;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $black_10;
+    }
+    & > button {
+      line-height: 16px;
+      font-size: 12px;
+      border: 1px solid $black_10;
+      border-bottom: none;
+      background-color: $black_10;
+      border-radius: 6px 6px 0 0;
+    }
+    & > button:not(:last-child) {
+      margin-right: 8px;
+    }
+    & > button:hover {
+      color: $primary;
+    }
+    & > button[tabindex='0'] {
+      color: $primary;
+      background-color: $white;
+    }
+    & > button:disabled {
+      color: $black_20;
+      border: none;
+    }
+  }
+  .PaneIndicator {
+    display: flex;
+    background-color: transparent;
+    transform: translate(0.6px, 1px);
+    & > span {
+      width: calc(100% - 1.2px);
+      background-color: $white;
+    }
+  }
+}

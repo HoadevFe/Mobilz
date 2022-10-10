@@ -1,0 +1,321 @@
+@import "sdk/styles/global.scss";
+
+@mixin flex($alignItems: center, $justifyContent: center) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin setFieldset($color) {
+  & fieldset {
+    border: 1px solid $color !important;
+  }
+}
+
+$black_dark: #1c1c21;
+$primary_default: #2563eb;
+
+.DateRangePickerDayHighlight {
+  color: $black_20;
+}
+
+.DateRangePickerWrapper {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 30px;
+  margin-top: 30px;
+
+  & .DateRangePickerInput {
+    border-radius: 3px;
+
+    & input {
+      padding: 10px;
+      color: $black_20;
+    }
+
+    fieldset {
+      border-radius: 3px;
+      border-color: $black_100;
+
+      &:hover {
+        border-color: $black_20;
+      }
+    }
+  }
+}
+
+.InputBaseRoot {
+  width: 270px;
+  & input {
+    padding: 7.5px 4px 7.5px 15px !important;
+    font-size: 14px;
+
+    &:disabled {
+      background-color: $black_dark;
+      color: $black_80;
+      cursor: unset;
+    }
+  }
+}
+
+.AutocompleteInputRoot {
+  overflow-x: auto;
+  height: 2.5rem;
+  background-color: $black_dark;
+
+  &[aria-selected="true"] {
+    background-color: $black_100 !important;
+  }
+
+  &:hover {
+    background-color: $black_100 !important;
+  }
+}
+
+.MonitoringHeader {
+  justify-content: space-between;
+  & .digitOption {
+    @include flex(center, flex-start);
+    // padding: 1rem;
+  }
+
+  & .DigitChart {
+    @include flex();
+    padding: 8px;
+    width: 48px;
+    height: 36px;
+    background: $black_dark;
+    border-radius: 8px;
+    margin-right: 10px;
+    pointer-events: none;
+
+    & p {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: $primary_default;
+    }
+  }
+
+  & .selectBox {
+    margin-left: 4px;
+  }
+
+  & .SelectOutlined {
+    @include flex();
+    background: $black_dark;
+    padding: 0.5rem 0.8rem;
+    padding-right: 2rem !important;
+    color: $black_20;
+    border: none;
+
+    &.selectedOutlinedRight {
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  & .DropdownRight {
+    @include flex(center, end);
+    padding: 1rem;
+    padding-right: 0px;
+    position: relative;
+  }
+
+  & .DropdownRightContent {
+    @include flex(center, end);
+  }
+
+  & .IconAccessTime {
+    width: 23px;
+    height: 23px;
+    margin-right: 6px;
+  }
+}
+
+.MenuItem {
+  padding: 8px 10px;
+
+  & .IconAccessTime {
+    width: 20px;
+    margin-right: 6px;
+    margin-left: 6px;
+  }
+}
+
+.InputAutoComplete {
+  & .InputAutoCompleteRoot {
+    padding: 0;
+  }
+
+  & fieldset {
+    border-color: #e3edfa;
+    border-radius: 3px;
+  }
+
+  input {
+    padding: 7.5px 15px 7.5px 15px;
+    color: $black_20;
+  }
+}
+
+.AutocompletePopupListbox {
+  color: $black_20;
+  font-size: 14px;
+  overflow: unset;
+}
+
+.AutocompletePopupPaper {
+  background: $black_dark;
+  height: 450px;
+  height: auto;
+}
+
+.AutocompleteNoOption {
+  color: $black_20;
+  text-align: start;
+  font-size: 14px;
+}
+
+.AutocompletePopup {
+  background-color: $black_dark;
+  color: $black_80;
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #aaaaaa;
+    border: 1px solid #000;
+  }
+}
+
+.filterTimezone {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  & .ChipInfo {
+    color: $black_20;
+    font-size: 10px;
+  }
+}
+
+.ButtonSettings {
+  padding: 5px 6px;
+  height: 30px;
+  background-color: $black_100;
+  color: $black_20;
+  border: none;
+  font-size: 10px;
+  padding: 0px 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+
+  &:hover {
+    background-color: $black_80;
+    border: none;
+  }
+}
+
+.DateRangePicker {
+  & div[class="css-1xhj18k"] {
+    background-color: $black_100;
+  }
+
+  & div[role="row"],
+  div[class="css-1tape97"] {
+    & button {
+      color: $black_20;
+    }
+
+    & span {
+      color: $black_20;
+    }
+  }
+
+  & ~ div:first-child {
+    color: red;
+  }
+}
+
+.TimeRange {
+  background: $black_dark;
+  grid-row: 7 / -1;
+  z-index: 1;
+  padding: 8px;
+}
+
+.DateRangePickerDayRoot {
+  color: $black_20;
+}
+
+.ContainerInputField {
+  fieldset {
+    border: 1px solid $black_60 !important;
+    border-radius: 3px !important;
+  }
+
+  &:focus-within {
+    @include setFieldset($primary_dark);
+  }
+}
+
+.Dropdown {
+  overflow: inherit;
+}
+
+.PopoverSelect {
+  background-color: $black_dark;
+  color: $black_20;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.InputFieldSelect {
+  color: $white;
+}
+
+.Button {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  text-transform: inherit;
+  color: $black_20;
+  border: 1px solid $black_20;
+}
+
+.MenuItemActive {
+  background-color: $black_100;
+
+  &:hover {
+    background-color: $black_100;
+  }
+}
+@media (max-width: 480px) {
+  .InputBaseRoot {
+    width: 100%;
+  }
+  .MonitoringHeader {
+    .digitOption {
+      width: 100%;
+      :global(.MuiAutocomplete-root) {
+        width: 100%;
+      }
+    }
+    .DropdownRight {
+      width: 100%;
+    }
+  }
+}

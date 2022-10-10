@@ -1,0 +1,351 @@
+@import '../styles/global.scss';
+
+$background_black: #1c1c21;
+$black_40: #4b4c57;
+$green: #27da68;
+$yellow: #f7be15;
+$primary_light: #51a1ff;
+$primary_dark: #5168ff;
+$black_light: #3d3d3d;
+
+@mixin text-style($fw, $fs, $lh, $ls) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+
+  tspan {
+    font-family: 'Mulish' !important;
+  }
+}
+
+@mixin color-icon-legend($bg) {
+  background: $bg;
+}
+
+@mixin flex($justifyContent) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: center;
+}
+
+.PaperChart {
+  background-color: $background_black;
+  border-radius: 8px;
+  height: auto;
+  overflow: hidden;
+
+  & canvas {
+    height: 245px !important;
+  }
+
+  & .container {
+    flex-direction: column;
+  }
+
+  & .Chart {
+    width: 100%;
+  }
+
+  & .seriesMordern {
+    stroke: $green;
+  }
+
+  & .seriesCoretemp {
+    stroke: $yellow;
+  }
+
+  & .chartRoot {
+    padding: 10px;
+    background: $background_black;
+    border-radius: 8px;
+    box-shadow: none;
+    height: 300px;
+  }
+
+  &.AreaChart {
+    & .TitleChart {
+      margin-top: 16px;
+    }
+
+    & canvas {
+      margin-left: 16px;
+      height: 300px !important;
+    }
+  }
+
+  & .TitleChart {
+    @include text-style(700, 19px, 24px, 0.4px);
+    color: $white;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  & .AxitLabel {
+    fill: $white;
+    @include text-style(400, 10px, 14px, 0.25px);
+  }
+
+  & .LineArgument {
+    stroke: $black_40;
+  }
+
+  & .rootLegend {
+    margin: 0;
+    padding: 0;
+  }
+
+  & .itemLegend {
+    display: flex;
+    flex-direction: inherit;
+    padding: 0;
+    padding-top: 14px;
+
+    & .labelLegend {
+      margin: 0;
+      padding: 0;
+      margin-right: 1.5rem;
+
+      span {
+        @include text-style(500, 11px, 16px, 0.5px);
+      }
+    }
+
+    & svg {
+      margin-right: 8px;
+      width: 12px;
+      height: 4px;
+      border-radius: 2px;
+    }
+
+    .coretempLegend {
+      @include color-icon-legend($green);
+    }
+
+    .modelLegend {
+      @include color-icon-legend($yellow);
+    }
+  }
+
+  &.AreaChart {
+    padding: 10px;
+    height: auto;
+    position: relative;
+
+    & .chartLoading {
+      right: 1%;
+      top: 5%;
+    }
+
+    & .chartRoot {
+      padding-right: 20px;
+      background: $background_black;
+      border-radius: 8px;
+      padding: 0;
+    }
+
+    & .rootLegend {
+      width: 40%;
+      padding: 5px;
+    }
+
+    .AreaReceivePath {
+      z-index: -1;
+      fill: url(#receiveGradient);
+    }
+
+    .AreaTransmitPath {
+      z-index: -1;
+      fill: url(#transmitGradient);
+    }
+
+    .mainReceiveStop {
+      stop-color: rgba(81, 161, 255, 0.5);
+    }
+
+    .altReceiveStop {
+      stop-color: rgba(81, 161, 255, 0);
+    }
+
+    .mainTransmitStop {
+      stop-color: rgba(14, 38, 206, 0.6);
+    }
+
+    .altTransmitStop {
+      stop-color: rgba(14, 38, 206, 0);
+    }
+
+    .SVGlinearGradient {
+      width: 0;
+      height: 0;
+      display: block;
+    }
+
+    & .rootLegend {
+      display: block;
+    }
+
+    & .TableChart {
+      background-color: $background_black;
+      box-shadow: none;
+      padding-right: 10px;
+      padding-left: 20px;
+
+      & th,
+      .TableCell {
+        @include text-style(500, 10px, 16px, 0.5px);
+        padding: 0;
+        text-align: center;
+        padding-bottom: 8px;
+        border-bottom: none;
+        line-break: anywhere;
+        vertical-align: text-top;
+        color: $white;
+        text-align: end;
+        pointer-events: none;
+      }
+
+      & .AlignEnd {
+        text-align: end;
+      }
+
+      & .TableHeadCell {
+        color: $primary_light;
+      }
+    }
+
+    & .chart1 {
+      @include color-icon-legend(rgba(81, 161, 255, 0.5));
+    }
+
+    & .chart2 {
+      @include color-icon-legend(rgba(14, 38, 206, 0.6));
+    }
+
+    & .marketChart {
+      margin-right: 8px;
+      width: 15px;
+      height: 4px;
+      border-radius: 1px;
+    }
+
+    & .TableCellMarket {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      text-align: start !important
+    }
+  }
+
+  & .SkeletonRoot {
+    @include flex(space-between);
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+
+    & .SkeletonTitle,
+    .SkeletonChart {
+      width: 100%;
+      @include flex(center);
+
+      & span {
+        width: 100%;
+        height: 150%;
+        background: $black_light;
+      }
+    }
+
+    & .SkeletonTitle {
+      width: 17%;
+      margin-top: -10px;
+      height: 45px;
+      margin-left: 20%;
+    }
+  }
+
+  .SkeletonChartNetWork {
+    & .SkeletonChartContent {
+      width: 100%;
+      @include flex(start);
+      gap: 10px;
+
+      & .SkeletonChart {
+        width: 60%;
+
+        span {
+          height: 150%;
+        }
+      }
+
+      & .SkeletonTable {
+        @include flex(center);
+        width: 40%;
+
+        & span {
+          width: 100%;
+          height: 150%;
+          background: $black_light;
+        }
+      }
+    }
+
+    & .SkeletonTitle {
+      margin-top: 0;
+      transform: translateY(13px);
+    }
+  }
+
+  & .SkeletonLineRoot {
+    @include flex(center);
+
+    & .SkeletonTitle {
+      width: 30%;
+      height: 45px;
+      margin: 0;
+      transform: translateY(13px);
+    }
+
+    & .SkeletonChart {
+      padding: 0 15px 15px;
+    }
+  }
+
+  & .DataEmpty {
+    color: $black_20;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.TooltipChart {
+  background-color: $black_100  !important;
+  color: $white;
+  border: none !important;
+  width: auto;
+
+  &>div {
+    background-color: #192a3e !important;
+    border: none !important;
+    padding: 0px 10px;
+    padding-right: 40px;
+    margin: 0;
+    text-align: start;
+  }
+
+  & span {
+    width: 12px;
+    height: 4px;
+    border-radius: 2px;
+  }
+}
+
+.chartLoading {
+  width: 20px !important;
+  height: 20px !important;
+
+  position: absolute;
+  right: 0;
+}

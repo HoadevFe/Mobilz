@@ -1,0 +1,155 @@
+@import 'sdk/styles/global.scss';
+
+.InputField {
+  margin-top: 1.7rem;
+
+  button {
+    margin-right: 5px;
+  }
+
+}
+
+button[aria-current="date"] {
+  color: $primary_light  !important;
+  border-color: $primary_dark  !important
+}
+
+.InputBaseError {
+  & fieldset {
+    border-color: $default_red  !important;
+  }
+}
+
+.IconButton {
+  color: $black_20;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: $black_100;
+
+  &:hover {
+    background-color: $black_80;
+  }
+}
+
+.ButtonSettings {
+  padding: 5px 6px;
+  height: 33px;
+  background-color: $black_80;
+  color: $black_20;
+  border: none;
+  font-size: 13px;
+  padding: 0px 13px;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: $black_60;
+    border: none;
+  }
+
+  &:disabled {
+    background-color: $black_100;
+    color: $black_60;
+    border: none;
+  }
+}
+
+.Main {
+  position: relative;
+
+}
+
+.TooltipError {
+  background-color: #d10e5c;
+  color: $white;
+  margin-top: 23px !important;
+  font-size: 0.7rem;
+}
+
+.TooltipArrow {
+  color: #d10e5c;
+}
+
+.BtnClose {
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: -6%;
+  left: -15%;
+}
+
+.DateRangeBox {
+  font-size: 12px;
+  position: relative;
+  left: -81%;
+  top: -20%;
+  background-color: #192a3e;
+  color: #c2cfe0;
+  transform: translateY(-32%) !important;
+
+  & div[class~="PrivatePickersFadeTransitionGroup-root"] {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: -webkit-fill-available;
+
+    &::-webkit-scrollbar-track {
+      padding: 2px 0;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #aaaaaa;
+    }
+  }
+
+  span {
+    color: $black_20;
+  }
+
+  button {
+    background-color: $black_80;
+    color: $black_20;
+  }
+}
+
+.DateRangePickerInput {
+  border-radius: 3px;
+
+  & input {
+    padding: 8px;
+    color: $black_20;
+  }
+
+  fieldset {
+    border-radius: 3px;
+    border-color: $black_100 ;
+
+    &:hover {
+      border-color: $black_20  !important;
+    }
+  }
+}
+
+.DateRangeMobile {
+  background-color: #192a3e;
+
+  button[role="gridcell"] {
+    background-color: $black_80;
+    color: $black_20;
+  }
+
+  span,
+  svg,
+  div[aria-live="polite"] {
+    color: #c2cfe0 !important;
+  }
+}

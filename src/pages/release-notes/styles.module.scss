@@ -1,0 +1,44 @@
+@import "sdk/styles/global.scss";
+
+.JRCard {
+    background-color: transparent;
+    padding: 0;
+    .Container {
+        padding: 24px;
+        background: #1c1c21;
+        box-sizing: border-box;
+        border-radius: 8px;
+        color: #ccceda;
+        margin-bottom: 16px;
+    }
+}
+.ReleaseNoteTitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.2;
+    color: #fff;
+}
+
+.ReleaseNoteDate {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.2;
+}
+.ReleaseNoteSmallTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1;
+    color: #fff;
+}
+.ReleaseNoteContentText {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+}

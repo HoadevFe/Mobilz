@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500&display=swap");
+
+$Regular: 400;
+$Medium: 500;
+$FontFamily: "Mulish";
+
+body {
+  font-family: $FontFamily !important;
+  font-style: normal;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.Display1 {
+  font-weight: $Regular;
+  font-size: 64px;
+  line-height: 76px;
+  letter-spacing: -0.5px;
+}
+
+.Display2 {
+  font-weight: $Regular;
+  font-size: 57px;
+  line-height: 64px;
+  letter-spacing: -0.25px;
+}
+
+.Display3 {
+  font-weight: $Regular;
+  font-size: 45px;
+  line-height: 52px;
+}
+
+.Headline1 {
+  font-weight: $Regular;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.Headline2 {
+  font-weight: $Regular;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.Headline3 {
+  font-weight: $Regular;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.Headline4 {
+  font-weight: $Regular;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.Headline5 {
+  font-weight: $Regular;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.Headline6 {
+  font-weight: $Regular;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.Subhead1 {
+  font-weight: $Medium;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+.Subhead2 {
+  font-weight: $Medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.Button {
+  font-weight: $Regular;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+.Body1 {
+  font-weight: $Regular;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.Body2 {
+  font-weight: $Regular;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.Caption {
+  font-weight: $Regular;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+}
+
+.Overline {
+  font-weight: $Medium;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}
+
+.labelSmall {
+  font-weight: $Medium;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+}

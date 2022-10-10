@@ -1,0 +1,10 @@
+/dist
+/node_modules
+/.vscode
+.eslintrc.js
+.gitignore
+.prettier
+/.git
+README.md
+vite-env.d.ts
+vite.dev.ts

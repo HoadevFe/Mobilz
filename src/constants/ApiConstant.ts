@@ -1,0 +1,8 @@
+export const LOGIN_ENDPOINT = '/user/login'
+export const DASHBOARD_ENDPOINT = '/dashboard'
+export const MONITORING_ENDPOINT = '/monitoring/v1'
+export const MONITORING_HOSTNAMES_ENDPOINT = '/monitoring/host-names'
+export const SETTING_ENDPOINT = '/setting/config'
+export const USER_ENDPOINT = '/user'
+export const CREATE_USER_ENDPOINT = '/user/register'
+export const DEVICE_ENDPOINT = '/device'

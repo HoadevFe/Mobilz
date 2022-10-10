@@ -1,0 +1,55 @@
+@import "../styles/global.scss";
+$primary_black: #1c1c21;
+$primary_gray: #a4a6b3;
+.SideMenu {
+  height: 100%;
+  background-color: $primary_black;
+  // width: 256px;
+  & .logo {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    & .logoImg {
+      & .imgEllipse {
+        position: relative;
+      }
+      & .imgD {
+        position: absolute;
+        right: 203px;
+        top: 47px;
+      }
+    }
+  }
+}
+.SideMenuContent {
+  height: 100%;
+  background-color: $primary_black;
+  padding-top: 48px;
+}
+.list {
+  width: 100%;
+  max-width: 360;
+  padding: 0;
+  & .navLinnk {
+    text-decoration: none;
+  }
+  & .ListItemButton {
+    color: $primary_gray;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    &:hover {
+      background-color: $black_80;
+      color: $white;
+      border-left: 3px solid $white;
+    }
+    & svg {
+      font-size: 24px;
+    }
+    & .text {
+      margin-left: 24px;
+    }
+  }
+}

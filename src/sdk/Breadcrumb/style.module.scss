@@ -1,0 +1,29 @@
+@import "../styles/global.scss";
+
+@mixin text-style {
+  font-size: 14px;
+  color: $black_60;
+  font-family: $FontFamily;
+}
+
+.BreadcrumbsRoot {
+  .BreadcrumbsOl {
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    @include text-style();
+    .BreadcrumbsLi {
+      & p {
+        @include text-style();
+      }
+
+      &:hover a {
+        text-decoration: none;
+        color: $primary;
+      }
+
+      &:last-child p {
+        color: $primary;
+      }
+    }
+  }
+}

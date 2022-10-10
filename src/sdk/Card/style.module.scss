@@ -1,0 +1,43 @@
+@import '../styles/global.scss';
+@mixin setColor($color) {
+  color: $color;
+}
+
+.Card {
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  & .CardActions {
+    & .Inactive {
+      @include setColor($black_100);
+    }
+    & .Active {
+      @include setColor($dark_blue);
+    }
+  }
+}
+
+.Menu {
+  & .MenuPaper {
+    box-shadow: 0px 1px 2px 0px #0000004d;
+  }
+  & .MenuItem {
+    width: 200px;
+    .Label {
+      width: 90%;
+      padding: 0.1rem 0;
+      @include setColor($black_100);
+    }
+    svg {
+      @include setColor($black_100);
+    }
+  }
+}
+
+.ListCard {
+  & .CardHeader {
+    padding: 0.5rem 1rem;
+    & .Title {
+      @include setColor($black_100);
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import 'sdk/styles/global.scss';
+$primary_background: #1c1c24;
+$primary_color: #ccceda;
+$color_border: #60626e;
+$background_select: #4b506d;
+$error_color: rgb(239, 81, 81);
+$icon_color: #9fa2b4;
+
+.DialogRoot {
+  width: 100%;
+}
+
+.DialogTitleEdit {
+  margin: 0;
+  padding: 1rem;
+  background: $primary_background;
+  color: $primary_color;
+  & .IconButton {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    color: $primary_color;
+  }
+}
+
+.DialogContentEdit {
+  background: $primary_background;
+  border-bottom-color: $color_border;
+  border-top-color: $color_border;
+}
+
+.DialogActionsEdit {
+  background: $primary_background;
+  padding: 1rem;
+  padding-right: 0;
+}
+
+.buttonView {
+  background: $black;
+  color: $primary_color;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  min-width: 1.875rem;
+}
+
+.content {
+  margin-top: 0.5rem;
+  & .GridItem {
+    padding-top: 0;
+    & .title {
+      font-size: 16px;
+      margin-bottom: 0;
+      color: $primary_color;
+    }
+    & .textContent {
+      color: $primary_color;
+      & .text {
+        @media (max-width: 480px) {
+          font-size: 0.875rem;
+        }
+        background: $background_select;
+        border-radius: 0.5rem;
+        width: 100%;
+        height: 2rem;
+        line-height: 2rem;
+        padding-left: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+.Link {
+  text-decoration: none;
+  color: $primary_color;
+}
+
+.iconShow {
+  color: $primary_color;
+  font-size: 1.875rem;
+  margin: 0 0.75rem;
+}

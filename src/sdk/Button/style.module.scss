@@ -1,0 +1,147 @@
+@import "../styles/global.scss";
+
+$btnshadow-color: 0px 4px 10px rgba(16, 156, 241, 0.24);
+
+@mixin hover-visited($color, $bg-color, $border-color, $shadow-color: none) {
+  color: $color;
+  background-color: $bg-color;
+  box-shadow: $shadow-color;
+  @if ($border-color) {
+    border-color: $border-color;
+  }
+}
+
+@mixin disabled($bg-color, $border-color, $color: $white, $shadow-color: none) {
+  background-color: $bg-color;
+  border-color: $border-color;
+  color: $color;
+  box-shadow: $shadow-color;
+}
+
+@mixin active($color, $bg-color, $border-color, $shadow-color) {
+  color: $color;
+  background-color: $bg-color;
+  border-color: $border-color;
+  box-shadow: $shadow-color;
+}
+
+@mixin outline_disabled($bg-color, $border-color, $color) {
+  background-color: $bg-color;
+  border-color: $border-color;
+  color: $color;
+}
+
+@mixin initValue($color, $bg-color, $border-color) {
+  background-color: $bg-color;
+  color: $color;
+  @if ($border-color) {
+    border: 1px solid $border-color;
+  }
+}
+
+@mixin border-color($border-color, $color) {
+  border-color: $border-color;
+  $color: $color;
+}
+
+@mixin btnBase(
+  $normal-color,
+  $normal-bg-color,
+  $normal-border-color,
+  $hover-color,
+  $hover-bg-color,
+  $hover-border-color,
+  $active-color,
+  $active-bg-color,
+  $active-border-color,
+  $active-shadow-color,
+  $disabled-bg-color,
+  $disabled-border-color,
+  $disabled-color
+) {
+  @content;
+  @include initValue($normal-color, $normal-bg-color, $normal-border-color);
+  &:hover,
+  :visited {
+    @include hover-visited($hover-color, $hover-bg-color, $hover-border-color);
+  }
+  &:active {
+    @include active(
+      $active-color,
+      $active-bg-color,
+      $active-border-color,
+      $active-shadow-color
+    );
+  }
+  &:disabled {
+    @include disabled(
+      $disabled-bg-color,
+      $disabled-border-color,
+      $disabled-color
+    );
+  }
+}
+
+.BaseButton {
+  height: 44px;
+  border-radius: 4px;
+  text-transform: capitalize !important;
+}
+
+.PrimaryButton {
+  @include btnBase(
+    $white,
+    $primary,
+    null,
+    $white,
+    $light_blue,
+    null,
+    $white,
+    $dark_blue,
+    null,
+    $btnshadow-color,
+    $black_20,
+    $black_20,
+    $white
+  );
+  box-shadow: $btnshadow-color;
+  &:hover {
+    box-shadow: $btnshadow-color;
+  }
+}
+
+.GhostButton {
+  @include btnBase(
+    $primary,
+    $white,
+    $primary,
+    $light_blue,
+    $white,
+    $light_blue,
+    $dark_blue,
+    $white,
+    $dark_blue,
+    $white,
+    $white,
+    $black_20,
+    $black_20
+  );
+}
+
+.TextButton {
+  @include btnBase(
+    $primary,
+    $white,
+    $white,
+    $light_blue,
+    $white,
+    $white,
+    $dark_blue,
+    $white,
+    null,
+    $white,
+    $white,
+    $white,
+    $primary
+  );
+}
